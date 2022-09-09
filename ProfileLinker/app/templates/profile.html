@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ProfileLinker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}" />
+</head>
+<body>
+    <div class="container">
+         <div class="imgshow">
+            <img src="{{data.image.url}}" alt="">
+         </div>
+         <div class="info">
+            <h4>{{data.name}}</h4>
+            <h5>{{data.Education}}</h5>
+            </h6>{{data.email}}</h6>
+         </div>
+         <hr>
+         <div class="linkinfo">
+            {% for i in linkdata %}
+            <div class="ourlink">
+                <div>
+            <h4>{{i.nameLink}}</h4>
+        </div>
+            <div>
+            <h5><a href="{{i.link}}">Click Here</a></h5>
+        </div>
+        </div>
+            {% endfor %}
+         </div>
+    </div>
+</body>
+</html>
